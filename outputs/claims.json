@@ -1,0 +1,148 @@
+[
+  {
+    "claim_id": "C001",
+    "text": "Collected employee-app review profile",
+    "type": "number",
+    "sql_or_script": "scripts/build_final_recommendation.py:get_data",
+    "result": {
+      "n": 1003,
+      "mean": 3.7716849451645067,
+      "start": "2016-10-04",
+      "end": "2026-10-09",
+      "negative_n": 293,
+      "negative_pct": 29.2123629112662,
+      "negative_ci": [
+        26.481650258768013,
+        32.101705852064114
+      ]
+    },
+    "review_ids": [],
+    "generated_at": "2026-10-11T16:17:53.701545+00:00"
+  },
+  {
+    "claim_id": "R001",
+    "text": "booking_scheduling: 49 reviews; modeled rating points lost 0.081",
+    "type": "recommendation",
+    "sql_or_script": "scripts/build_final_recommendation.py:get_data+quotes_for",
+    "result": {
+      "theme": "booking_scheduling",
+      "n": 49,
+      "mean": 2.204081632653061,
+      "negative_n": 35,
+      "share": 4.885343968095713,
+      "negative_share": 11.945392491467576,
+      "points_lost": 0.0805163126971287
+    },
+    "review_ids": [
+      1699,
+      1254,
+      1625
+    ],
+    "generated_at": "2026-10-11T16:17:53.787913+00:00"
+  },
+  {
+    "claim_id": "R002",
+    "text": "live_tracking_eta: 43 reviews; modeled rating points lost 0.057",
+    "type": "recommendation",
+    "sql_or_script": "scripts/build_final_recommendation.py:get_data+quotes_for",
+    "result": {
+      "theme": "live_tracking_eta",
+      "n": 43,
+      "mean": 2.488372093023256,
+      "negative_n": 26,
+      "share": 4.287138584247258,
+      "negative_share": 8.873720136518772,
+      "points_lost": 0.0574817215021602
+    },
+    "review_ids": [
+      1766,
+      1900,
+      1482
+    ],
+    "generated_at": "2026-10-11T16:17:53.902608+00:00"
+  },
+  {
+    "claim_id": "R003",
+    "text": "login_otp: 27 reviews; modeled rating points lost 0.054",
+    "type": "recommendation",
+    "sql_or_script": "scripts/build_final_recommendation.py:get_data+quotes_for",
+    "result": {
+      "theme": "login_otp",
+      "n": 27,
+      "mean": 1.8148148148148149,
+      "negative_n": 21,
+      "share": 2.691924227318046,
+      "negative_share": 7.167235494880546,
+      "points_lost": 0.054134726966641
+    },
+    "review_ids": [
+      1,
+      115,
+      62
+    ],
+    "generated_at": "2026-10-11T16:17:54.007453+00:00"
+  },
+  {
+    "claim_id": "R004",
+    "text": "app_crash_install: 23 reviews; modeled rating points lost 0.049",
+    "type": "recommendation",
+    "sql_or_script": "scripts/build_final_recommendation.py:get_data+quotes_for",
+    "result": {
+      "theme": "app_crash_install",
+      "n": 23,
+      "mean": 1.6956521739130435,
+      "negative_n": 17,
+      "share": 2.293120638085743,
+      "negative_share": 5.802047781569966,
+      "points_lost": 0.0487232181007996
+    },
+    "review_ids": [
+      160,
+      178,
+      4
+    ],
+    "generated_at": "2026-10-11T16:17:54.096144+00:00"
+  },
+  {
+    "claim_id": "R005",
+    "text": "late_noshow_cab: 18 reviews; modeled rating points lost 0.032",
+    "type": "recommendation",
+    "sql_or_script": "scripts/build_final_recommendation.py:get_data+quotes_for",
+    "result": {
+      "theme": "late_noshow_cab",
+      "n": 18,
+      "mean": 2.0,
+      "negative_n": 13,
+      "share": 1.7946161515453638,
+      "negative_share": 4.436860068259386,
+      "points_lost": 0.0323759685410773
+    },
+    "review_ids": [
+      1795,
+      1316,
+      1858
+    ],
+    "generated_at": "2026-10-11T16:17:54.181644+00:00"
+  },
+  {
+    "claim_id": "R006",
+    "text": "routing_stops: 23 reviews; modeled rating points lost 0.028",
+    "type": "recommendation",
+    "sql_or_script": "scripts/build_final_recommendation.py:get_data+quotes_for",
+    "result": {
+      "theme": "routing_stops",
+      "n": 23,
+      "mean": 2.5652173913043477,
+      "negative_n": 13,
+      "share": 2.293120638085743,
+      "negative_share": 4.436860068259386,
+      "points_lost": 0.0283150548354935
+    },
+    "review_ids": [
+      1597,
+      1279,
+      1424
+    ],
+    "generated_at": "2026-10-11T16:17:54.265220+00:00"
+  }
+]

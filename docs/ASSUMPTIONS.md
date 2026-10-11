@@ -1,0 +1,17 @@
+# ASSUMPTIONS LOG
+
+All assumptions are logged here and flagged to the human at the next gate.
+
+| ID | Assumption | Why Needed | Date | Status |
+|----|-----------|-----------|------|--------|
+| A01 | The project language is Python 3.10+ for all pipeline code (ingest, classify, analyze, report generation). | Need to pick a language before writing any code. Python has the best ecosystem for data analysis, LLM APIs, and PDF generation. Will be justified in DECISIONS.md. | 2026-10-10 | **approved** (GATE 0) |
+| A02 | Reviews in languages other than English (e.g., Hindi, Hinglish, regional) will be classified in their original language; no translation step unless the classifier fails on them at high rates. | Translation can alter meaning (per master prompt §6.2). Gemini supports multilingual input. | 2026-10-10 | **approved** (GATE 0) |
+| A03 | 8+ hours/day available over the 2-day window, mostly uninterrupted. All three tiers are feasible. | Determines scope ambition. | 2026-10-10 | **approved** (GATE 0) |
+| A04 | Human can spend 60+ minutes hand-labeling reviews, enabling a ~150-review validation sample for stronger classifier evaluation. | Per §6.3, larger sample = better accuracy/kappa estimates. | 2026-10-10 | **approved** (GATE 0) |
+| A05 | We treat `google-play-scraper` Python library as an acceptable data source (structured programmatic interface over Google Play). | Master prompt says "use an API, not scraping" but human approved this at GATE 1 after seeing the tradeoffs. | 2026-10-10 | **approved** (GATE 1) |
+| A06 | 2 competitors (Routematic, Safetrax) is sufficient for benchmarking. | Keeps scope manageable within time constraints. | 2026-10-10 | **approved** (GATE 1) |
+| A07 | All 3 MoveInSync apps are in scope: employee (`com.moveinsync.ets`), driver lite (`com.moveinsync.driver.lite`), and driver onboarding (`com.moveinsync.driver.dco`). | Human explicitly said "include" for the onboarding app. | 2026-10-10 | **approved** (GATE 1) |
+| A08 | Gemini free tier limits: RPM=60, TPM=100k, RPD=100. Will batch 10-20 reviews per API call to stay within RPD. May need 2+ days to classify a large dataset. | Reported by human from aistudio.google.com/rate-limit. | 2026-10-10 | **rejected** — direct API response on 2026-10-11 reports a 20 RPD limit for `gemini-2.5-flash` on this project. |
+| A09 | The assistant will populate the requested validation-sheet fields with provisional, taxonomy-based labels. These labels are not independent human ground truth and must not be used to report classifier accuracy or Cohen's kappa. | The human requested that the assistant fill all label-sheet fields rather than manually label the sample. | 2026-10-11 | **approved** (user instruction) |
+| A10 | Taxonomy v1 is approved and the project will proceed without an independently human-labeled validation set. Classifier-accuracy and Cohen's-kappa results will be reported as `UNKNOWN`; this limitation will be explicit in the methods and recommendation PDF. | The human instructed the project to continue after being informed of the validation consequence. | 2026-10-11 | **approved** (GATE 3) |
+| A11 | This Gemini project has an active free-tier `gemini-2.5-flash` cap of 20 generation requests per day. Classification will use at most 20 requests per Pacific-time quota window and resume after reset. | The API returned a `RESOURCE_EXHAUSTED` response identifying this exact limit and reset timing. | 2026-10-11 | **approved** (runtime verified) |

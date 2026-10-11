@@ -1,0 +1,27 @@
+# Core
+psycopg2-binary>=2.9
+python-dotenv>=1.0
+google-play-scraper>=1.2
+google-generativeai>=0.5
+
+# Analysis
+pandas>=2.0
+numpy>=1.24
+
+# Visualization / Dashboard
+plotly>=5.18
+streamlit>=1.30
+
+# PDF generation
+weasyprint>=60.0
+jinja2>=3.1
+markdown>=3.5
+reportlab>=5.0
+
+# Language detection
+langdetect>=1.0
+
+# Utilities
+tqdm>=4.65
+tenacity>=8.2
+hashlib-additional>=1.0; python_version < "0"
